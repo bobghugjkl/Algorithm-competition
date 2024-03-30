@@ -10,13 +10,11 @@ def find(x):
 
 for _ in range(m):
     s = input().split()
-    a, b = map(int, s[1:])
-    a, b = find(a), find(b)
+    a, b = int(s[1]), int(s[2])
     if s[0] == 'M':
-        if a != b:
-            p[a] = b
+        p[find(a)] = find(b)
     else:
-        if a == b:
+        if find(a) == find(b):
             print("Yes")
         else:
             print('No')
