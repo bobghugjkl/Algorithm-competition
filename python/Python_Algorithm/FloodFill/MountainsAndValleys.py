@@ -1,5 +1,5 @@
 dx = [-1, 1, 0, 0, -1, -1, 1, 1]
-dy = [-1, 1, 0, 0, -1, -1, 1, 1]
+dy = [0, 0, -1, 1, -1, 1, -1, 1]
 st = set()
 
 
@@ -11,7 +11,7 @@ def bfs(a, b):
     st.add((a, b))
     tg = s[a][b]
     f1, f2 = True, True
-    while hh < tt:
+    while hh <= tt:
         t = sk[hh]
         hh += 1
         for i in range(8):

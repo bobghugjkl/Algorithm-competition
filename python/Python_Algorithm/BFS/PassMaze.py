@@ -1,6 +1,6 @@
 N = 110
-g = [[0] * N for i in range(N)]
-d = [[-1] * N for i in range(N)]
+g = [[0] * N for _ in range(N)]
+d = [[-1] * N for _ in range(N)]
 queue = [(0, 0)]
 
 
@@ -13,9 +13,9 @@ def bfs():
         hh += 1
         for i in range(4):
             point_x, point_y = t[0] + x[i], t[1] + y[i]
-            if point_x >= 0 and point_x < N or point_y >= 0 and point_y < m and g[point_y][point_x] == 0 and d[point_y][
-                point_x] == -1:
-                d[point_y][point_x] = d[t[0]][t[1]] + 1
+            if point_x >= 0 and point_x < N and point_y >= 0 and point_y < m and g[point_x][point_y] == 0 and d[point_x][
+                point_y] == -1:
+                d[point_x][point_y] = d[t[0]][t[1]] + 1
                 tt += 1
                 queue.append((point_x, point_y))
     return d[n - 1][m - 1]
